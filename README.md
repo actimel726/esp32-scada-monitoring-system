@@ -194,9 +194,9 @@ Slave ID = 1
 
 The system supports:
 
-real-time visualization
-pump control
-alarm monitoring
-AI-assisted anomaly detection
+- real-time visualization
+- pump control
+- alarm monitoring
+- AI-assisted anomaly detection
 
 
