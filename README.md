@@ -41,6 +41,10 @@ ESP32 + Sensors
       ScadaBR
    HMI / Visualization
 ```
+
+<img width="756" height="1073" alt="image" src="https://github.com/user-attachments/assets/caa64e23-f860-4528-b48e-d3e8ef42a5ce" />
+
+
 ## Features
 - ESP32 Modbus TCP server
 - WiFi-based telemetry acquisition
@@ -198,5 +202,23 @@ The system supports:
 - pump control
 - alarm monitoring
 - AI-assisted anomaly detection
+
+## Results
+SCADA Web Interface
+<img width="1267" height="826" alt="image" src="https://github.com/user-attachments/assets/3270fba7-23ab-4072-b02f-48698d5a6654" />
+
+Normal vs anomaly detection example logs
+
+[2026-05-27T21:31:12.728063+03:00] level=167mm (83%) | temp=28.9C | dist=63mm | pump_cmd=OFF | pump_fb=OFF | mode=AUTO | low_alarm=0 | high_alarm=0 | temp_alarm=0 | fault=0 | ok=1 | low_th=30% | high_th=80% | high_temp_th=30.0C | status_word=65 | AI=NORMAL
+
+[2026-05-27T21:34:45.715054+03:00] level=191mm (95%) | temp=28.7C | dist=39mm | pump_cmd=OFF | pump_fb=OFF | mode=AUTO | low_alarm=0 | high_alarm=1 | temp_alarm=0 | fault=0 | ok=0 | low_th=30% | high_th=80% | high_temp_th=30.0C | status_word=73 | AI=ANOMALY
+<img width="3828" height="187" alt="image" src="https://github.com/user-attachments/assets/27408d61-4b38-4501-8a60-05e0f572b5f3" />
+
+```text
+{"ts": "2026-05-27T22:43:59.038815+03:00", "event_type": "telemetry", "asset": "esp32_tank_station", "asset_ip": "192.168.0.133", "proto": "modbus_tcp", "unit_id": 1, "level_mm": 178, "level_pct": 89, "temp_c": 28.6, "distance_mm": 52, "level_change_rate": -2.4777743639553207, "pump_cmd": false, "pump_fb": false, "auto_mode": true, "low_alarm": false, "high_alarm": false, "temp_alarm": false, "sensor_fault": false, "system_ok": true, "status_word": 65, "ai_model": "IsolationForest", "ai_anomaly": false, "ai_status": "NORMAL"}
+
+{"ts": "2026-05-27T22:44:01.195899+03:00", "event_type": "telemetry", "asset": "esp32_tank_station", "asset_ip": "192.168.0.133", "proto": "modbus_tcp", "unit_id": 1, "level_mm": 183, "level_pct": 91, "temp_c": 28.7, "distance_mm": 47, "level_change_rate": 4.602352170147119, "pump_cmd": false, "pump_fb": false, "auto_mode": true, "low_alarm": false, "high_alarm": false, "temp_alarm": false, "sensor_fault": false, "system_ok": true, "status_word": 65, "ai_model": "IsolationForest", "ai_anomaly": true, "ai_status": "ANOMALY"}
+```
+
 
 
