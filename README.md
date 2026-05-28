@@ -209,10 +209,6 @@ SCADA Web Interface
 
 Normal vs anomaly detection example logs
 
-[2026-05-27T21:31:12.728063+03:00] level=167mm (83%) | temp=28.9C | dist=63mm | pump_cmd=OFF | pump_fb=OFF | mode=AUTO | low_alarm=0 | high_alarm=0 | temp_alarm=0 | fault=0 | ok=1 | low_th=30% | high_th=80% | high_temp_th=30.0C | status_word=65 | AI=NORMAL
-
-[2026-05-27T21:34:45.715054+03:00] level=191mm (95%) | temp=28.7C | dist=39mm | pump_cmd=OFF | pump_fb=OFF | mode=AUTO | low_alarm=0 | high_alarm=1 | temp_alarm=0 | fault=0 | ok=0 | low_th=30% | high_th=80% | high_temp_th=30.0C | status_word=73 | AI=ANOMALY
-<img width="3828" height="187" alt="image" src="https://github.com/user-attachments/assets/27408d61-4b38-4501-8a60-05e0f572b5f3" />
 
 ```text
 {"ts": "2026-05-27T22:43:59.038815+03:00", "event_type": "telemetry", "asset": "esp32_tank_station", "asset_ip": "192.168.0.133", "proto": "modbus_tcp", "unit_id": 1, "level_mm": 178, "level_pct": 89, "temp_c": 28.6, "distance_mm": 52, "level_change_rate": -2.4777743639553207, "pump_cmd": false, "pump_fb": false, "auto_mode": true, "low_alarm": false, "high_alarm": false, "temp_alarm": false, "sensor_fault": false, "system_ok": true, "status_word": 65, "ai_model": "IsolationForest", "ai_anomaly": false, "ai_status": "NORMAL"}
